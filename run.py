@@ -16,12 +16,12 @@ from app.handlers import router
 
 TOKEN = os.getenv("BOT_TOKEN")
 
-bot = Bot(token=TOKEN)
-
-dp = Dispatcher()
 
 
 async def main():
+    bot = Bot(token=TOKEN)
+    dp = Dispatcher()
+
     dp.include_router(router)
     await dp.start_polling(bot)
 
